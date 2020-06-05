@@ -40,3 +40,10 @@ class EqBuilder:
 
     def rectifying_plane(self, s):  # спрямна
         return self._faces_eq_builder(self._curve(s), normal(self._curve, s))
+
+    def osculating_circle(self, s, digits=5):
+        center, radius = osculating_circle(self._curve, s)
+        return f"(x - {str(center[0])[:digits]})**2 + " \
+               f"(y - {str(center[1])[:digits]})**2 + " \
+               f"(z - {str(center[2])[:digits]})**2 = {radius}\n" \
+               + self.osculating_plane(s)

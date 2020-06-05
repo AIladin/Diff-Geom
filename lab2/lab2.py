@@ -76,7 +76,7 @@ class ImplicitFunctionSolver:
                  g: self.point[tmp.index(g)]}
 
         var_sub = {sympy.symbols(self.variable): self.point[tmp.index(self.variable)]}
-        rez = []
+        rez = [sympy.Matrix(self.point).transpose()]
         for step in range(steps):  # TODO
             print("Step ", step+1)
             f_main = f_main.diff(self.variable)
