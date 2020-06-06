@@ -74,7 +74,7 @@ class EqBuilder:
         center, radius = osculating_circle(self.p, self.d1, self.d2)
         return f"(x - {str(center[0])[:digits]})**2 + " \
                f"(y - {str(center[1])[:digits]})**2 + " \
-               f"(z - {str(center[2])[:digits]})**2 = {radius}\n"\
+               f"(z - {str(center[2])[:digits]})**2 = {radius**2}\n"\
                + self.osculating_plane()
 
     @property
